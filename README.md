@@ -1,37 +1,11 @@
-# 2024 Archive: Python Automation Scripts
+A collection of video workflows I made to help process film.
 
-The Python tools I wrote in 2024 while learning AI-assisted programming and automation, kept here for history. They are small single-purpose scripts, written with AI assistance, and they are not maintained.
-
-Everything is in [`2024/`](2024/). The original notes are in [`2024/readme.md`](2024/readme.md).
-
-## The main project: an automated quote-video pipeline
-
-Most of these scripts feed one idea: turn a text file of quotes into finished narrated videos with as little manual editing as possible.
-
-```mermaid
-flowchart LR
-    A[Quote list<br/>.txt] --> B[Split into<br/>one file per quote]
-    B --> C[Google Gemini<br/>writes the script]
-    C --> D[ElevenLabs<br/>text to speech]
-    D --> E[FFmpeg<br/>stock footage + music + voice]
-    E --> F[Finished video]
-    D -. audio kept if the video step fails .-> G[Audio Gen Fixer<br/>retries the video only]
-```
-
-- `AI_AUTO_VIDEO_MAKER`, `All-In-One AUTO VIDEO MAKER`: the whole pipeline in one run, over many quote files.
-- `FFMPEG_VIDEO_MAKER`, `Video Maker Separate Programs`, `VideoStitcher`: the video assembly step on its own.
-- `Audio Gen Fixer`: rebuilds a video from audio that was already generated, so a failed run does not spend text-to-speech credits twice.
-
-## Everything else, by category
-
-| Category | Folders |
-|---|---|
-| Video utilities (FFmpeg) | Vertical Video Converter, Video_Splitter, Video_Trimmer, Video_FadeIn-Out, VIDEO_FPS_CONVERTER, Video_Converter_Program, VideoAppender, Video_2s_Adder, Video_LastFrame_Grabber, Video_STILL_FRAME_CAPTURE, Video_Random_Segment, Video_Music_Adder, Video_Volume, Video_Podcast_Maker, Video_Music_Maker, IMG2Video, Subtitles_Generator, video_encoding_and_FPS_checker, Total_Duration |
-| Audio | audio_trimmer, Audio_BG_Music_Looper, AudioQuoteStitcher, AudiobookStitcher, AutoElevenLabs_Combiner, Sample_rate_fixer, Silence Adder, Video_44.1khz_Converter |
-| Generative AI APIs | Autoblog Gemini, AutoSeparate_Gemini, AutoMastermind, Replicate_Image_Generator, img2img_converter |
-| Images and print-on-demand mockups | Printify Mockup Image Combiner, RATIO Printify Portrait Ratio Maker, AVIF_WEBP_Converter, DPI_Converter, Image_flipper, Transparency_Test, EXIF_Check_Move |
-| Text | Random_Quote_Combiner, Text Separator, TEXT_Formatter_Quotes, TXT Docufier, TXT EPUB Converter, TXT Renamer |
-| Files and datasets | File Organization Code, File_renamer, file_grabber, Random_File_Grabber, FolderStructure Copier, Name_Randomizer, SUFFIX-PREFIX-Adder |
-| Other | Davinci_Text_Inserter, GPU_ID |
-
-API keys in these scripts are placeholders. To run one, put your own key in the script's key variable, or better, read it from an environment variable.
+| Repo | Preview | Link |
+|---|---|---|
+| Civitai | <img src="https://raw.githubusercontent.com/vucodehan/vucodehan/main/docs/media/civitai-jesus.gif" width="140" alt="Jesus speaks, from the Shroud of Turin Flux LoRA."> | [civitai.com/user/HooChoo](https://civitai.com/user/HooChoo)<br>137 followers · 1.8k likes · 26.4k downloads · 1.8k generations |
+| Cel-shaded engine | <img src="https://raw.githubusercontent.com/vucodehan/cel-shaded-engine/main/docs/media/lipsync.gif" width="240" alt="A drawn character speaks, then turns."> | [vucodehan/cel-shaded-engine](https://github.com/vucodehan/cel-shaded-engine) |
+| Video-clone toolkit | <img src="https://raw.githubusercontent.com/vucodehan/video-clone-toolkit/main/docs/media/promos.gif" width="240" alt="Four original phone promos: driplet, halfsy, pacely, and parlo."> | [vucodehan/video-clone-toolkit](https://github.com/vucodehan/video-clone-toolkit) |
+| SyncNet scorer | <img src="https://raw.githubusercontent.com/vucodehan/syncnet-lipsync-scorer/main/docs/media/scores.png" width="240" alt="Median lip-sync confidence across nine benches."> | [vucodehan/syncnet-lipsync-scorer](https://github.com/vucodehan/syncnet-lipsync-scorer) |
+| Resolve shot notes | <img src="https://raw.githubusercontent.com/vucodehan/resolve-shot-notes/main/docs/media/workflow.png" width="240" alt="Note, agent, load, then accept or reject."> | [vucodehan/resolve-shot-notes](https://github.com/vucodehan/resolve-shot-notes) |
+| Depth map converter | <img src="https://raw.githubusercontent.com/vucodehan/depth-map-converter/main/docs/media/workflow.png" width="240" alt="Input, depth, stack, then export."> | [vucodehan/depth-map-converter](https://github.com/vucodehan/depth-map-converter) |
+| 2024 archive | | [vucodehan/hanvu-python-automation-2024](https://github.com/vucodehan/hanvu-python-automation-2024) |
